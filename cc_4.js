@@ -23,3 +23,10 @@ function updateStock (product, unitsSold) {
         console.log (`${product.name} stock updated. ${product.quantity} units remaining.`);
     }
     }
+function checkLowStock(inventory) { 
+    inventory.forEach(product => {
+        if (product.quantity <=product.lowStockLevel){
+            console.log(`${product.name} is low in stock.`); 
+        }
+    });
+}
