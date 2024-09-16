@@ -33,3 +33,11 @@ function checkLowStock(inventory) {
 function calculateInventoryValue(inventory) {
     return inventory.reduce( ( total, product) => total + (product.price * product.quantity), 0);   
 }
+function processSale (inventory, productName, unitsSold) {
+    const product = inventory.find (prod => prod.name === productName);
+    if (product) {
+        updateStock(product, unitsSold);    
+    } else { 
+        console.log(`Product ${productName} not found in inventory.`);
+    }
+}
